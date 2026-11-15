@@ -1,0 +1,40 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 450" width="100%" height="100%">
+  <defs>
+    <linearGradient id="sky" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0%" stop-color="#1a365d" />
+      <stop offset="60%" stop-color="#2b6cb0" />
+      <stop offset="100%" stop-color="#76a9fa" />
+    </linearGradient>
+    <linearGradient id="water" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0%" stop-color="#2c5282" />
+      <stop offset="100%" stop-color="#1a202c" />
+    </linearGradient>
+    <linearGradient id="island" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0%" stop-color="#22543d" />
+      <stop offset="100%" stop-color="#1a202c" />
+    </linearGradient>
+  </defs>
+  <rect width="800" height="450" fill="url(#sky)" />
+  <!-- Montañas de fondo -->
+  <polygon points="50,280 180,120 320,280" fill="#2d3748" opacity="0.6"/>
+  <polygon points="220,280 390,90 540,280" fill="#1a202c" opacity="0.8"/>
+  <polygon points="460,280 620,130 760,280" fill="#2d3748" opacity="0.6"/>
+  <!-- Agua lago Silver Lake -->
+  <rect y="260" width="800" height="190" fill="url(#water)" />
+  <!-- Isla de Dutch -->
+  <ellipse cx="400" cy="330" rx="340" ry="80" fill="url(#island)" />
+  <!-- Búnker y Torre de Radio -->
+  <rect x="390" y="180" width="8" height="110" fill="#e2e8f0"/>
+  <line x1="375" y1="210" x2="413" y2="210" stroke="#e2e8f0" stroke-width="4"/>
+  <line x1="380" y1="235" x2="408" y2="235" stroke="#e2e8f0" stroke-width="4"/>
+  <circle cx="394" cy="175" r="5" fill="#f56565"/>
+  <!-- Pinos y siluetas -->
+  <polygon points="280,310 295,250 310,310" fill="#1c4532"/>
+  <polygon points="310,320 325,240 340,320" fill="#143425"/>
+  <polygon points="450,320 465,245 480,320" fill="#143425"/>
+  <polygon points="480,315 495,255 510,315" fill="#1c4532"/>
+  <polygon points="520,330 535,260 550,330" fill="#143425"/>
+  <!-- Título superpuesto -->
+  <rect x="30" y="30" width="230" height="40" rx="8" fill="rgba(15,23,42,0.85)" stroke="#63b3ed" stroke-width="1.5"/>
+  <text x="45" y="56" font-family="sans-serif" font-weight="900" font-size="18" fill="#ffffff" letter-spacing="2">DUTCH'S ISLAND</text>
+</svg>

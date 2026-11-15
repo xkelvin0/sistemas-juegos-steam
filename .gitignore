@@ -1,0 +1,14 @@
+# OS & System
+.DS_Store
+Thumbs.db
+desktop.ini
+
+# IDE & Editors
+.vscode/
+.idea/
+*.swp
+*.swo
+
+# Node / Scratch
+node_modules/
+*.log

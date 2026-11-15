@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Far Cry 5 — Tracker 100% Hope County</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,400;0,600;0,700;0,800;0,900;1,800&family=Teko:wght@500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="./assets/css/styles.css" />
+</head>
+<body>
+  <div class="container">
+    <header class="header-banner">
+      <div class="header-top">
+        <div class="header-title-box">
+          <h1>FAR CRY <span>5</span> — SISTEMA MAESTRO 100%</h1>
+          <p>★ HOPE COUNTY, MONTANA • 448 OBJETIVOS Y DLCS • 72 LOGROS STEAM • <span class="badge-persist">💾 GUARDADO LOCAL PERMANENTE</span></p>
+        </div>
+        <div class="header-actions">
+          <button type="button" id="btn-export">Exportar Respaldo</button>
+          <button type="button" id="btn-import">Importar Respaldo</button>
+          <button type="button" id="btn-reset" class="btn-danger">Reiniciar Todo</button>
+        </div>
+      </div>
+
+      <div class="metrics-grid">
+        <div class="metric-box">
+          <span class="label">Progreso Real Ponderado (Total)</span>
+          <span class="value" id="metric-true-100">0.00%</span>
+          <div class="progress-track">
+            <div class="progress-fill" id="bar-true-100" style="width: 0%"></div>
+          </div>
+        </div>
+        <div class="metric-box">
+          <span class="label">Contenido In-Game + 3 DLCs (448)</span>
+          <span class="value" id="metric-content">0 / 448 (0.0%)</span>
+          <div class="progress-track">
+            <div class="progress-fill" id="bar-content" style="width: 0%"></div>
+          </div>
+        </div>
+        <div class="metric-box">
+          <span class="label">Logros de Steam (72 Trofeos)</span>
+          <span class="value" id="metric-steam">0 / 72 (0.0%)</span>
+          <div class="progress-track">
+            <div class="progress-fill" id="bar-steam" style="width: 0%"></div>
+          </div>
+        </div>
+      </div>
+    </header>
+
+    <div class="alert-banner" id="error-banner" role="alert">
+      <span id="error-text"></span>
+      <button type="button" id="btn-close-error">Cerrar</button>
+    </div>
+
+    <!-- NAVEGACIÓN PRINCIPAL: 3 VISTAS SEPARADAS -->
+    <nav class="views-nav-bar">
+      <button type="button" class="view-nav-btn active" id="nav-regions">🗺️ 1. Zonas y Regiones (Portadas)</button>
+      <button type="button" class="view-nav-btn" id="nav-checklist">📋 2. Checklist Detallado (448 Objetivos)</button>
+      <button type="button" class="view-nav-btn" id="nav-steam">🏆 3. Logros Oficiales de Steam (72)</button>
+    </nav>
+
+    <!-- VISTA 1: EXPLORADOR DE REGIONES CON IMÁGENES -->
+    <section class="section-card" id="view-regions">
+      <div style="border-bottom: 2px solid #e8dec8; padding-bottom: 8px;">
+        <h2 style="font-family: 'Teko', sans-serif; font-size: 2.2rem; color: #2c1d11; text-transform: uppercase;">
+          Elige una Región o Expansión para Explorar sus Objetivos
+        </h2>
+      </div>
+      <div class="regions-poster-grid" id="region-grid"></div>
+    </section>
+
+    <!-- VISTA 2: LISTA DE TAREAS Y FILTROS -->
+    <section class="section-card" id="view-checklist" style="display: none;">
+      <div class="context-region-banner" id="current-region-banner" style="display: none;"></div>
+
+      <div class="filter-bar">
+        <input
+          type="search"
+          id="search-input"
+          placeholder="🔍 Buscar por nombre, misión, pez récord, coleccionable, ubicación..."
+        />
+        <select id="status-select" aria-label="Estado">
+          <option value="ALL">Mostrar: Todos los objetivos</option>
+          <option value="PENDING">Solo Pendientes (Lo que me falta)</option>
+          <option value="COMPLETED">Solo Completados</option>
+        </select>
+        <select id="region-select" aria-label="Región"></select>
+        <select id="category-select" aria-label="Categoría"></select>
+      </div>
+
+      <div class="category-pills" id="category-pills"></div>
+
+      <div style="display: flex; justify-content: space-between; align-items: center; font-size: 0.88rem; font-weight: 700; color: #555;">
+        <span id="results-counter">Mostrando 0 elementos</span>
+        <button type="button" id="btn-mark-visible" style="font-size: 0.78rem; padding: 6px 14px;">Marcar Visibles Desbloqueados</button>
+      </div>
+
+      <ul class="checklist" id="checklist-container"></ul>
+    </section>
+
+    <!-- VISTA 3: LOGROS STEAM -->
+    <section class="section-card" id="view-steam" style="display: none;">
+      <div style="display: flex; justify-content: space-between; align-items: center; border-bottom: 2px solid #e8dec8; padding-bottom: 10px;">
+        <h2 style="font-family: 'Teko', sans-serif; font-size: 2.2rem; color: #2c1d11; text-transform: uppercase;">
+          Los 72 Logros Oficiales de Steam (AppID 552520)
+        </h2>
+        <select id="steam-scope-select" style="max-width: 320px;"></select>
+      </div>
+
+      <div style="display: flex; justify-content: space-between; align-items: center; font-size: 0.88rem; font-weight: 700; color: #555;">
+        <span id="steam-results-counter">Mostrando 72 logros</span>
+      </div>
+
+      <ul class="checklist" id="steam-container"></ul>
+    </section>
+  </div>
+
+  <script src="./dist/app.js"></script>
+</body>
+</html>

@@ -1,0 +1,82 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 450" width="100%" height="100%">
+  <defs>
+    <linearGradient id="vietnam-sky" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0%" stop-color="#551a1a" />
+      <stop offset="40%" stop-color="#9b2c2c" />
+      <stop offset="75%" stop-color="#dd6b20" />
+      <stop offset="100%" stop-color="#fbd38d" />
+    </linearGradient>
+    <linearGradient id="jungle-ground" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0%" stop-color="#1c4532" />
+      <stop offset="100%" stop-color="#051b11" />
+    </linearGradient>
+  </defs>
+
+  <!-- Cielo de amanecer en la jungla de Vietnam -->
+  <rect width="800" height="450" fill="url(#vietnam-sky)" />
+
+  <!-- Sol rojo naciente -->
+  <circle cx="240" cy="210" r="70" fill="#e53e3e" opacity="0.8"/>
+
+  <!-- Silueta de colinas kársticas de la selva -->
+  <path d="M -20,330 Q 140,160 280,310 Q 420,170 580,320 Q 700,200 820,330 L 820,450 L -20,450 Z" fill="#22543d" opacity="0.45"/>
+
+  <!-- Helicóptero Bell UH-1 Huey en vuelo -->
+  <g transform="translate(480, 90) scale(0.9)">
+    <!-- Rotor principal girando (elipse traslúcida) -->
+    <ellipse cx="65" cy="-8" rx="80" ry="3" fill="#1a202c" opacity="0.7"/>
+    <line x1="65" y1="-8" x2="65" y2="10" stroke="#1a202c" stroke-width="4"/>
+    <!-- Fuselaje del Huey -->
+    <path d="M 0,25 Q 15,5 50,8 L 105,14 Q 130,16 160,20 L 165,12 L 170,12 L 168,26 L 100,28 L 25,32 Q 5,32 0,25 Z" fill="#1a202c"/>
+    <!-- Cabina / parabrisas -->
+    <polygon points="12,18 35,12 40,24 15,25" fill="#fbd38d" opacity="0.7"/>
+    <!-- Patines de aterrizaje -->
+    <line x1="25" y1="38" x2="90" y2="38" stroke="#1a202c" stroke-width="3"/>
+    <line x1="40" y1="30" x2="35" y2="38" stroke="#1a202c" stroke-width="2.5"/>
+    <line x1="80" y1="29" x2="75" y2="38" stroke="#1a202c" stroke-width="2.5"/>
+    <!-- Rotor de cola -->
+    <line x1="165" y1="5" x2="165" y2="28" stroke="#1a202c" stroke-width="2.5"/>
+  </g>
+
+  <!-- Dos helicópteros más pequeños en formación a lo lejos -->
+  <g transform="translate(680, 60) scale(0.35)" fill="#2d3748">
+    <ellipse cx="65" cy="-8" rx="70" ry="3"/>
+    <path d="M 0,25 Q 15,5 50,8 L 105,14 L 160,20 L 100,28 L 25,32 Z"/>
+  </g>
+  <g transform="translate(730, 90) scale(0.28)" fill="#2d3748">
+    <ellipse cx="65" cy="-8" rx="70" ry="3"/>
+    <path d="M 0,25 Q 15,5 50,8 L 105,14 L 160,20 L 100,28 L 25,32 Z"/>
+  </g>
+
+  <!-- Terreno y densa vegetación selvática -->
+  <rect y="310" width="800" height="140" fill="url(#jungle-ground)" />
+
+  <!-- Palmeras y follaje tropical en silueta -->
+  <!-- Palmera izquierda -->
+  <g transform="translate(90, 190)">
+    <path d="M 40,160 Q 45,90 20,20" stroke="#051b11" stroke-width="9" fill="none"/>
+    <!-- Frondas de palma -->
+    <path d="M 20,20 Q -40,10 -70,50" stroke="#051b11" stroke-width="4.5" fill="none"/>
+    <path d="M 20,20 Q -20,-30 -30,-60" stroke="#051b11" stroke-width="4.5" fill="none"/>
+    <path d="M 20,20 Q 30,-30 60,-40" stroke="#051b11" stroke-width="4.5" fill="none"/>
+    <path d="M 20,20 Q 70,0 90,35" stroke="#051b11" stroke-width="4.5" fill="none"/>
+    <path d="M 20,20 Q 50,40 60,80" stroke="#051b11" stroke-width="4" fill="none"/>
+  </g>
+
+  <!-- Torre de vigilancia de bambú enemiga (NVA) -->
+  <g transform="translate(320, 240) stroke="#051b11" stroke-width="3" fill="none">
+    <line x1="10" y1="110" x2="25" y2="20"/>
+    <line x1="50" y1="110" x2="35" y2="20"/>
+    <line x1="12" y1="80" x2="48" y2="80"/>
+    <line x1="18" y1="50" x2="42" y2="50"/>
+    <line x1="15" y1="80" x2="45" y2="50"/>
+    <line x1="45" y1="80" x2="15" y2="50"/>
+    <!-- Caseta superior -->
+    <rect x="15" y="5" width="30" height="18" fill="#051b11"/>
+    <polygon points="10,5 30,-8 50,5" fill="#051b11"/>
+  </g>
+
+  <!-- Insignia y Título -->
+  <rect x="30" y="30" width="260" height="40" rx="8" fill="rgba(15,23,42,0.85)" stroke="#fc8181" stroke-width="1.5"/>
+  <text x="45" y="56" font-family="sans-serif" font-weight="900" font-size="18" fill="#ffffff" letter-spacing="2">HOURS OF DARKNESS</text>
+</svg>

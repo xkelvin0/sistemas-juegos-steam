@@ -1,0 +1,79 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 450" width="100%" height="100%">
+  <defs>
+    <linearGradient id="zombie-sky" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0%" stop-color="#07120a" />
+      <stop offset="35%" stop-color="#0f291e" />
+      <stop offset="70%" stop-color="#143425" />
+      <stop offset="100%" stop-color="#22543d" />
+    </linearGradient>
+    <radialGradient id="toxic-moon" cx="50%" cy="50%" r="50%">
+      <stop offset="0%" stop-color="#d9f99d" stop-opacity="0.95"/>
+      <stop offset="60%" stop-color="#84cc16" stop-opacity="0.6"/>
+      <stop offset="100%" stop-color="#4d7c0f" stop-opacity="0"/>
+    </radialGradient>
+  </defs>
+
+  <!-- Cielo tenebroso de película de serie B de Guy Marvel -->
+  <rect width="800" height="450" fill="url(#zombie-sky)" />
+
+  <!-- Luna tóxica radioactiva y su brillo -->
+  <circle cx="560" cy="120" r="130" fill="url(#toxic-moon)" />
+  <circle cx="560" cy="120" r="45" fill="#f7fee7" />
+  <!-- Cráteres lunares -->
+  <circle cx="545" cy="105" r="9" fill="#d9f99d" opacity="0.6"/>
+  <circle cx="575" cy="130" r="14" fill="#d9f99d" opacity="0.5"/>
+  <circle cx="550" cy="140" r="7" fill="#d9f99d" opacity="0.6"/>
+
+  <!-- Mansión embrujada / Laboratorio en la colina -->
+  <polygon points="120,290 240,170 380,290" fill="#051b11"/>
+  <!-- Torre gótica -->
+  <rect x="220" y="140" width="40" height="70" fill="#051b11"/>
+  <polygon points="215,140 240,90 265,140" fill="#051b11"/>
+  <rect x="232" y="160" width="16" height="22" rx="8" fill="#84cc16" opacity="0.8"/> <!-- Ventana iluminada verde -->
+
+  <!-- Cementerio y colinas -->
+  <path d="M 0,290 Q 250,250 500,285 T 800,270 L 800,450 L 0,450 Z" fill="#051b11" />
+
+  <!-- Lápidas del cementerio -->
+  <g fill="#143425" stroke="#22543d" stroke-width="2">
+    <!-- Lápida 1 con cruz -->
+    <rect x="180" y="275" width="22" height="35" rx="5"/>
+    <line x1="191" y1="282" x2="191" y2="298"/>
+    <line x1="185" y1="288" x2="197" y2="288"/>
+
+    <!-- Lápida 2 inclinada -->
+    <path d="M 330,295 L 350,285 L 360,315 L 340,325 Z"/>
+
+    <!-- Lápida 3 grande -->
+    <rect x="640" y="280" width="28" height="40" rx="8"/>
+  </g>
+
+  <!-- Brazo zombi emergiendo de la tierra en primer plano -->
+  <g transform="translate(420, 290)">
+    <!-- Montículo de tierra -->
+    <ellipse cx="25" cy="85" rx="35" ry="12" fill="#07120a"/>
+    <!-- Brazo verde en descomposición -->
+    <path d="M 20,85 L 23,40 L 18,15 L 14,0" stroke="#4ade80" stroke-width="7" stroke-linecap="round" fill="none"/>
+    <!-- Dedos huesudos extendidos hacia la luna -->
+    <path d="M 14,0 L 8,-12" stroke="#4ade80" stroke-width="3" stroke-linecap="round"/>
+    <path d="M 14,0 L 14,-15" stroke="#4ade80" stroke-width="3" stroke-linecap="round"/>
+    <path d="M 14,0 L 20,-14" stroke="#4ade80" stroke-width="3" stroke-linecap="round"/>
+    <path d="M 14,0 L 25,-8" stroke="#4ade80" stroke-width="3" stroke-linecap="round"/>
+  </g>
+
+  <!-- Siluetas de horda zombi avanzando -->
+  <g transform="translate(680, 240) scale(0.65)" fill="#07120a">
+    <!-- Zombi 1 -->
+    <circle cx="20" cy="20" r="10"/>
+    <rect x="15" y="30" width="10" height="35"/>
+    <line x1="15" y1="35" x2="-5" y2="40" stroke="#07120a" stroke-width="5" stroke-linecap="round"/>
+    <!-- Zombi 2 -->
+    <circle cx="50" cy="25" r="9"/>
+    <rect x="45" y="34" width="10" height="35"/>
+    <line x1="45" y1="40" x2="25" y2="44" stroke="#07120a" stroke-width="5" stroke-linecap="round"/>
+  </g>
+
+  <!-- Insignia y Título -->
+  <rect x="30" y="30" width="280" height="40" rx="8" fill="rgba(15,23,42,0.85)" stroke="#a3e635" stroke-width="1.5"/>
+  <text x="45" y="56" font-family="sans-serif" font-weight="900" font-size="18" fill="#ffffff" letter-spacing="2">DEAD LIVING ZOMBIES</text>
+</svg>

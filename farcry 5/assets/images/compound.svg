@@ -1,0 +1,81 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 450" width="100%" height="100%">
+  <defs>
+    <linearGradient id="eden-sky" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0%" stop-color="#742a2a" />
+      <stop offset="35%" stop-color="#c53030" />
+      <stop offset="70%" stop-color="#dd6b20" />
+      <stop offset="95%" stop-color="#f6e05e" />
+    </linearGradient>
+    <radialGradient id="sun-apocalypse" cx="50%" cy="40%" r="50%">
+      <stop offset="0%" stop-color="#ffffff" stop-opacity="0.9"/>
+      <stop offset="40%" stop-color="#fefcbf" stop-opacity="0.7"/>
+      <stop offset="80%" stop-color="#ed8936" stop-opacity="0"/>
+    </radialGradient>
+  </defs>
+
+  <!-- Cielo apocalíptico del Juicio Final -->
+  <rect width="800" height="450" fill="url(#eden-sky)" />
+  <circle cx="400" cy="180" r="260" fill="url(#sun-apocalypse)" />
+
+  <!-- Silueta de la cordillera que rodea el lago central -->
+  <polygon points="-50,300 200,180 430,300" fill="#2d3748" opacity="0.7"/>
+  <polygon points="370,300 600,160 850,300" fill="#2d3748" opacity="0.7"/>
+
+  <!-- Colina y suelo del Complejo de Joseph -->
+  <ellipse cx="400" cy="380" rx="460" ry="120" fill="#1a202c" />
+
+  <!-- Capilla Central del Proyecto de Eden's Gate -->
+  <g transform="translate(290, 120)">
+    <!-- Cuerpo de la Iglesia de madera -->
+    <polygon points="110,60 110,210 0,210 0,110" fill="#2d3748"/>
+    <polygon points="110,60 220,110 220,210 110,210" fill="#1a202c"/>
+
+    <!-- Campanario y Torre de la iglesia -->
+    <rect x="80" y="20" width="60" height="90" fill="#4a5568"/>
+    <polygon points="80,20 110,-40 140,20" fill="#2d3748"/>
+
+    <!-- La Cruz Emblemática de Eden's Gate en la cima del campanario -->
+    <g transform="translate(110, -55) scale(1.1)">
+      <!-- Barra vertical -->
+      <line x1="0" y1="-25" x2="0" y2="25" stroke="#f6e05e" stroke-width="4.5"/>
+      <!-- Barra horizontal -->
+      <line x1="-20" y1="0" x2="20" y2="0" stroke="#f6e05e" stroke-width="4.5"/>
+      <!-- Diagonal 1 -->
+      <line x1="-14" y1="-14" x2="14" y2="14" stroke="#f6e05e" stroke-width="3"/>
+      <!-- Diagonal 2 -->
+      <line x1="-14" y1="14" x2="14" y2="-14" stroke="#f6e05e" stroke-width="3"/>
+      <!-- Círculo o punto de foco -->
+      <circle cx="0" cy="0" r="4" fill="#ffffff"/>
+    </g>
+
+    <!-- Puerta doble y ventanas en arco -->
+    <path d="M 95,150 Q 110,135 125,150 L 125,210 L 95,210 Z" fill="#f6ad55"/>
+    <circle cx="110" cy="95" r="14" fill="#f6e05e" opacity="0.8"/>
+
+    <!-- Cartel "The Collapse is upon us" -->
+    <rect x="70" y="215" width="80" height="15" fill="#ffffff" stroke="#1a202c" stroke-width="1.5"/>
+  </g>
+
+  <!-- Vallas y alambre de espino perimetral -->
+  <g stroke="#718096" stroke-width="2">
+    <line x1="80" y1="360" x2="80" y2="395"/>
+    <line x1="140" y1="365" x2="140" y2="400"/>
+    <line x1="200" y1="370" x2="200" y2="405"/>
+    <line x1="600" y1="370" x2="600" y2="405"/>
+    <line x1="660" y1="365" x2="660" y2="400"/>
+    <line x1="720" y1="360" x2="720" y2="395"/>
+    <line x1="60" y1="375" x2="220" y2="385" stroke-dasharray="6,4"/>
+    <line x1="580" y1="385" x2="740" y2="375" stroke-dasharray="6,4"/>
+  </g>
+
+  <!-- Siluetas de los heraldos a los lados -->
+  <g transform="translate(160, 310) scale(0.65)" fill="#1a202c">
+    <!-- Pinos de Montana -->
+    <polygon points="30,130 50,30 70,130"/>
+    <polygon points="60,130 85,20 110,130"/>
+  </g>
+
+  <!-- Insignia y Título -->
+  <rect x="30" y="30" width="260" height="40" rx="8" fill="rgba(15,23,42,0.85)" stroke="#ecc94b" stroke-width="1.5"/>
+  <text x="45" y="56" font-family="sans-serif" font-weight="900" font-size="18" fill="#ffffff" letter-spacing="2">JOSEPH'S COMPOUND</text>
+</svg>

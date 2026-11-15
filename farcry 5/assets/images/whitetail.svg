@@ -1,0 +1,74 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 450" width="100%" height="100%">
+  <defs>
+    <linearGradient id="whitetail-sky" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0%" stop-color="#0d2538" />
+      <stop offset="45%" stop-color="#1a4058" />
+      <stop offset="85%" stop-color="#285e61" />
+      <stop offset="100%" stop-color="#319795" />
+    </linearGradient>
+    <linearGradient id="snow-peaks" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0%" stop-color="#ffffff" />
+      <stop offset="40%" stop-color="#e2e8f0" />
+      <stop offset="100%" stop-color="#4a5568" />
+    </linearGradient>
+  </defs>
+
+  <!-- Cielo alpino frío y hostil -->
+  <rect width="800" height="450" fill="url(#whitetail-sky)" />
+
+  <!-- Picos nevados escarpados de las Montañas Whitetail -->
+  <!-- Pico de fondo central -->
+  <polygon points="180,310 400,60 620,310" fill="#2d3748" opacity="0.6"/>
+  <polygon points="360,110 400,60 440,110 415,130 400,105 385,130" fill="url(#snow-peaks)"/>
+
+  <!-- Picos laterales -->
+  <polygon points="-60,320 160,95 380,320" fill="#1a202c" opacity="0.8"/>
+  <polygon points="120,140 160,95 200,140 180,155 160,135 140,155" fill="#edf2f7"/>
+
+  <polygon points="420,320 640,110 860,320" fill="#1a202c" opacity="0.85"/>
+  <polygon points="600,155 640,110 680,155 660,170 640,150 620,170" fill="#edf2f7"/>
+
+  <!-- Capas de bosques de pinos perennes -->
+  <g fill="#1a365d" opacity="0.7">
+    <polygon points="30,340 50,250 70,340"/>
+    <polygon points="60,340 85,240 110,340"/>
+    <polygon points="100,340 120,260 140,340"/>
+    <polygon points="660,340 685,240 710,340"/>
+    <polygon points="700,340 725,250 750,340"/>
+  </g>
+
+  <!-- Terreno escarpado del F.A.N.G. Center y Búnker de Jacob -->
+  <polygon points="0,320 300,280 500,300 800,270 800,450 0,450" fill="#0f291e"/>
+
+  <!-- Bosque de abetos densos en primer plano -->
+  <g fill="#0b1d15">
+    <polygon points="40,430 75,270 110,430"/>
+    <polygon points="90,440 125,290 160,440"/>
+    <polygon points="150,450 190,300 230,450"/>
+    <polygon points="580,450 620,290 660,450"/>
+    <polygon points="640,440 680,270 720,440"/>
+    <polygon points="700,450 740,310 780,450"/>
+  </g>
+
+  <!-- Silueta del Lobo Juez (Judge Wolf) aullando sobre una roca -->
+  <g transform="translate(350, 240) scale(0.95)">
+    <!-- Roca saliente -->
+    <polygon points="-40,110 50,70 130,110 110,130 -30,130" fill="#1a202c"/>
+    <!-- Lobo silueta -->
+    <path d="M 20,70 L 40,65 L 50,45 L 60,30 L 68,15 L 75,5 L 77,5 L 74,18 L 78,22 L 72,32 L 68,45 L 75,55 L 72,70 L 62,70 L 58,60 L 35,62 L 25,70 Z" fill="#ffffff"/>
+    <circle cx="70" cy="18" r="1.5" fill="#e53e3e"/> <!-- Ojo rojo condicionamiento Jacob -->
+  </g>
+
+  <!-- Caja de música de Jacob (Only You) emitiendo ondas -->
+  <g transform="translate(480, 340)">
+    <rect x="0" y="0" width="32" height="24" rx="3" fill="#744210" stroke="#d69e2e" stroke-width="2"/>
+    <circle cx="16" cy="12" r="6" fill="#ecc94b"/>
+    <!-- Ondas de sonido subliminales -->
+    <path d="M 38,4 A 12,12 0 0,1 38,20" stroke="#f6e05e" stroke-width="2" fill="none" opacity="0.8"/>
+    <path d="M 44,-2 A 20,20 0 0,1 44,26" stroke="#f6e05e" stroke-width="2" fill="none" opacity="0.5"/>
+  </g>
+
+  <!-- Insignia y Título -->
+  <rect x="30" y="30" width="280" height="40" rx="8" fill="rgba(15,23,42,0.85)" stroke="#38b2ac" stroke-width="1.5"/>
+  <text x="45" y="56" font-family="sans-serif" font-weight="900" font-size="18" fill="#ffffff" letter-spacing="2">WHITETAIL MOUNTAINS</text>
+</svg>
