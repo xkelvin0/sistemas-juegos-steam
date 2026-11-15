@@ -159,21 +159,39 @@ export const bootstrapTrackerApp = (): void => {
   let selectedSteamScope: DlcScope | 'ALL' = 'ALL';
   let selectedStatus: CompletionFilterStatus = 'ALL';
   let searchQuery = '';
+  let notificationTimer: ReturnType<typeof setTimeout> | null = null;
 
-  const showError = (msg: string): void => {
+  const showNotification = (msg: string, type: 'info' | 'success' | 'error' = 'info'): void => {
     const banner = document.getElementById('error-banner');
     const text = document.getElementById('error-text');
     if (banner && text) {
       text.textContent = msg;
-      banner.classList.add('visible');
+      banner.className = `alert-banner visible alert-${type}`;
+      if (notificationTimer !== null) {
+        clearTimeout(notificationTimer);
+        notificationTimer = null;
+      }
+      if (type !== 'error') {
+        notificationTimer = setTimeout(() => {
+          clearNotification();
+        }, 5000);
+      }
     }
   };
 
-  const clearError = (): void => {
+  const clearNotification = (): void => {
     const banner = document.getElementById('error-banner');
     if (banner) {
       banner.classList.remove('visible');
     }
+  };
+
+  const showError = (msg: string): void => {
+    showNotification(msg, 'error');
+  };
+
+  const clearError = (): void => {
+    clearNotification();
   };
 
   const saveState = (): void => {
@@ -251,34 +269,35 @@ export const bootstrapTrackerApp = (): void => {
     const nextState = !currentlyDone;
 
     if (nextState) {
-      const missingTitles: string[] = [];
-      for (const prereqId of item.prerequisites) {
-        const prereq = FARCRY5_CATALOG.itemById.get(prereqId);
-        if (prereq !== undefined && !hasBit(contentBitset, prereq.bitIndex)) {
-          missingTitles.push(prereq.title);
+      // Auto-resolver en cascada recursiva todos los prerrequisitos obligatorios de la historia
+      const autoCompletedTitles: string[] = [];
+      const resolvePrereqsRecursively = (targetId: ItemId): void => {
+        const target = FARCRY5_CATALOG.itemById.get(targetId);
+        if (target === undefined) return;
+        for (const prereqId of target.prerequisites) {
+          const prereq = FARCRY5_CATALOG.itemById.get(prereqId);
+          if (prereq !== undefined && !hasBit(contentBitset, prereq.bitIndex)) {
+            setBit(contentBitset, prereq.bitIndex, true);
+            autoCompletedTitles.push(prereq.title);
+            resolvePrereqsRecursively(prereqId);
+          }
         }
-      }
-      if (missingTitles.length > 0) {
-        showError(
-          `Prerrequisito pendiente para "${item.title}": primero debes completar [${missingTitles.join(', ')}].`
-        );
-        renderAll();
-        return;
-      }
+      };
 
-      if (item.requiredRp !== undefined) {
-        const currentRp = createResistancePoints(getRegionRp(item.region));
-        if (currentRp < item.requiredRp) {
-          showError(
-            `Puntos de Resistencia insuficientes en ${REGION_METADATA[item.region].name}: tienes ${String(currentRp)} RP y "${item.title}" requiere ${String(item.requiredRp)} RP.`
-          );
-          renderAll();
-          return;
-        }
+      resolvePrereqsRecursively(item.id);
+
+      if (autoCompletedTitles.length > 0) {
+        showNotification(
+          `✓ Completado en cadena: Al marcar "${item.title}", se completaron automáticamente sus misiones previas obligatorias: [${autoCompletedTitles.join(', ')}].`,
+          'success'
+        );
+      } else {
+        clearNotification();
       }
+    } else {
+      clearNotification();
     }
 
-    clearError();
     setBit(contentBitset, item.bitIndex, nextState);
     reconcileSteamAchievements();
     saveState();

@@ -234,6 +234,22 @@ button.btn-danger {
   font-weight: 600;
   justify-content: space-between;
   align-items: center;
+  transition: all 0.2s ease;
+}
+
+.alert-banner.alert-success {
+  background: linear-gradient(135deg, rgba(27, 94, 32, 0.95) 0%, rgba(46, 125, 50, 0.95) 100%);
+  border-color: #81c784;
+}
+
+.alert-banner.alert-info {
+  background: linear-gradient(135deg, rgba(13, 71, 161, 0.95) 0%, rgba(25, 118, 210, 0.95) 100%);
+  border-color: #64b5f6;
+}
+
+.alert-banner.alert-error {
+  background: rgba(201, 42, 42, 0.95);
+  border-color: #ff8787;
 }
 
 .alert-banner.visible {
